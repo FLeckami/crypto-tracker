@@ -1,0 +1,10 @@
+{% extends 'crypto_tracker/base.html.twig' %}
+
+{% block buttons %}
+    <button class="material-symbols-outlined" onclick="navigation.navigate('/')">close</button>
+{% endblock %}
+{% block body %}
+{{form_start(form)}}
+    {{form(form)}}
+{{form_end(form)}}
+{% endblock %}

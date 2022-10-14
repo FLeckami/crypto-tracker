@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Akzidenz-Grotesk BQ';
+    src: url('font/AkzidenzGroteskBQ-XBold.ttf') format('truetype'),
+         url('font/AkzidenzGroteskBQ-XBold.woff2') format('woff2'),
+         url('font/AkzidenzGroteskBQ-XBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('font/Roboto-Regular.ttf');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('font/Roboto-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --green: #1fc36c;
+    --black: #100f0f;
+    --white: #efefef;
+}
+
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Roboto';
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+
+    border-bottom: 1px solid gray;
+}
+
+header button {
+    border: none;
+    background-color: var(--black);
+    color: var(--white);
+    cursor: pointer;
+}
+
+h2, .no-crypto {
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Akzidenz-Grotesk BQ';
+    font-weight: 800;
+}
+
+.crypto-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px
+}
+.crypto-element {
+    display: grid;
+    grid-template-columns: 24px 3em 0.25fr 1fr;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+}
+.crypto-qty {
+    text-align: center;
+}
+.crypto-img {
+    width: 24px;
+    height: auto;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#form div {
+    padding: 20px;
+}

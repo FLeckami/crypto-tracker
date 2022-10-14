@@ -1,0 +1,24 @@
+{% extends 'crypto_tracker/base.html.twig' %}
+
+{% block buttons %}
+    <button class="material-symbols-outlined" onclick="navigation.navigate('add')">add</button>
+    <button class="material-symbols-outlined" onclick="navigation.navigate('edit')">edit</button>
+{% endblock %}
+
+{% block body %}
+    <h2> {{total_amount < 0 ? "-" : "+"}}{{total_amount}} €</h2>
+    <div class="crypto-list">
+        <div class="crypto-elements">
+        {% for crypto in crypto_list %}
+            <div class="crypto-element">
+                <img class="crypto-img" alt="logo {{crypto.CryptoAbbr}}" src="crypto-tracker/img/{{crypto.CryptoName}}.png"/>
+                <div class="crypto-abbr">{{crypto.CryptoAbbr}}</div>
+                <div class="crypto-name">{{crypto.CryptoName}}</div>
+                <div class="crypto-qty">{{crypto.CryptoQty}}</div>
+            </div>
+        {% else %}
+            <p class="no-crypto">Pas de crypto pour le moment</p>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
