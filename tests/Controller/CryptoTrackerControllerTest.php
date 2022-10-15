@@ -9,7 +9,7 @@ class CryptoTrackerControllerTest extends WebTestCase
     public function testWebPageIsUp(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/crypto-tracker');
+        $crawler = $client->request('GET', '/');
 
         //echo $client->getResponse()->getContent();
 
@@ -20,7 +20,7 @@ class CryptoTrackerControllerTest extends WebTestCase
     public function testaddTransaction(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/crypto-tracker');
+        $crawler = $client->request('GET', '/');
 
         $form = $client->clickLink('add');
 
@@ -30,7 +30,7 @@ class CryptoTrackerControllerTest extends WebTestCase
             'form[buying_price]' => 10
         ]);
 
-        $crawler = $client->followRedirect();
+        $crawler = $client->request('GET', '/');
 
         $crawler->assertSelectorTextSame('.crypto-list:first-child() > .crypto-abbr', 'BTC');
         $crawler->assertSelectorTextSame('.crypto-list:first-child() > .crypto-name', 'Bitcoin');
